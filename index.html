@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Repaso páginas web</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
@@ -187,9 +189,37 @@
 <h4 id="scrollspyHeading2">Ejercicio</h4>
 
 <br>
+
+<div class="flex justify-center items-center h-screen">
+
+  <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+      <!-- Titulo con hover para mostrar pop-over -->
+      <h2 class="text-2xl font-semibold mb-4 text-center text-gray-800 group relative">
+          Calculadora de Descuento
+          <!-- Tooltip con más información -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 w-64 text-center bg-blue-600 text-white text-sm rounded-lg p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              Si la compra es mayor o igual a 1000$, se aplica un 15% de descuento. 
+              Si es entre 500$ y 999$, un 10%, y si es menor a 500$, solo un 5%.
+          </div>
+      </h2>
+      <label for="monto" class="block text-lg font-medium text-gray-700 mb-2">Ingresa el monto de la compra:</label>
+      <input type="number" id="monto" class="w-full p-2 border border-gray-300 rounded-lg mb-4" placeholder="$0">
+
+      <button onclick="calcularDescuento()" class="w-full bg-blue-500 text-white py-2 rounded-lg">Calcular Descuento</button>
+
+      <div id="resultado" class="mt-4 text-center hidden">
+          <h3 class="text-xl font-semibold text-gray-800">Descuento Aplicado: <span id="descuento" class="text-green-600"></span></h3>
+          <p class="text-lg text-gray-600">Total a Pagar: $<span id="totalPagar" class="font-semibold"></span></p>
+      </div>
+
+      <button onclick="restablecer()" class="w-full bg-red-700 text-white py-2 rounded-lg mt-1.5">Restablecer valores</button>
+  </div>
+</div>
+
+<br>
 <footer>
     <p>Derechos de autor © 2025. Mi sitio web.</p>
-    <p>Contáctanos: <a href="mailto:info@misitioweb.com">info@misitioweb.com</a></p>
+    <p>Contáctanos: <a href="mailto:20190019@ricaldone.edu.sv">20190019@ricaldone.edu.sv</a></p>
   </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
